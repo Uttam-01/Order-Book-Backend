@@ -1,4 +1,4 @@
-package com.valemont.exchange.dto.auth;
+package com.valemont.exchange.user.dto;
 
 import lombok.*;
 

@@ -1,6 +1,6 @@
-package com.valemont.exchange.repository;
+package com.valemont.exchange.user.repository;
 
-import com.valemont.exchange.model.User;
+import com.valemont.exchange.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

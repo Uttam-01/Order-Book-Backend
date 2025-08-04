@@ -1,7 +1,7 @@
 package com.valemont.exchange.services.impl;
 
-import com.valemont.exchange.model.User;
-import com.valemont.exchange.repository.UserRepository;
+import com.valemont.exchange.user.model.User;
+import com.valemont.exchange.user.repository.UserRepository;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 

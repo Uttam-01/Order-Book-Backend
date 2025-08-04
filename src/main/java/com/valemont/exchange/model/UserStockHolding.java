@@ -1,6 +1,7 @@
 // File: src/main/java/com/valemont/exchange/model/UserStockHolding.java
 package com.valemont.exchange.model;
 
+import com.valemont.exchange.user.model.User;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.UUID;

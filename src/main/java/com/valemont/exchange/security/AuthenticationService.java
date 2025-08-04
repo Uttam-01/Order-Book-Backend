@@ -1,11 +1,11 @@
 package com.valemont.exchange.security;
 
 import com.valemont.exchange.dto.auth.AuthRequest;
-import com.valemont.exchange.dto.auth.AuthResponse;
-import com.valemont.exchange.dto.auth.RegisterRequest;
+import com.valemont.exchange.user.dto.AuthResponse;
+import com.valemont.exchange.user.dto.RegisterRequest;
 import com.valemont.exchange.model.CustomUserDetails;
-import com.valemont.exchange.model.User;
-import com.valemont.exchange.repository.UserRepository;
+import com.valemont.exchange.user.model.User;
+import com.valemont.exchange.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -1,6 +1,6 @@
 package com.valemont.exchange.security;
 
-import com.valemont.exchange.model.User;
+import com.valemont.exchange.user.model.User;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
