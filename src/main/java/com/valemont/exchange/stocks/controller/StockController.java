@@ -1,7 +1,7 @@
-package com.valemont.exchange.controller;
+package com.valemont.exchange.stocks.controller;
 
-import com.valemont.exchange.model.Stock;
-import com.valemont.exchange.services.StockService;
+import com.valemont.exchange.stocks.model.Stock;
+import com.valemont.exchange.stocks.service.StockService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

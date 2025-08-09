@@ -1,8 +1,7 @@
-package com.valemont.exchange.services.impl;
+package com.valemont.exchange.stocks.service;
 
-import com.valemont.exchange.model.Stock;
-import com.valemont.exchange.repository.StockRepository;
-import com.valemont.exchange.services.StockService;
+import com.valemont.exchange.stocks.model.Stock;
+import com.valemont.exchange.stocks.repository.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

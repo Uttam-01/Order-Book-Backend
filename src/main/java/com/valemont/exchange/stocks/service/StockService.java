@@ -1,6 +1,6 @@
-package com.valemont.exchange.services;
+package com.valemont.exchange.stocks.service;
 
-import com.valemont.exchange.model.Stock;
+import com.valemont.exchange.stocks.model.Stock;
 
 import java.util.List;
 import java.util.UUID;

@@ -13,12 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/users")
+@RequestMapping("")
 public class UserController {
-    private final UserService userService;
-    @PostMapping
-    public ResponseEntity<String>  createUser(@RequestBody RegisterRequest request){
-        userService.register(request);
-        return ResponseEntity.ok("user ki ma chud gi h");
-    }
+
 }

@@ -1,4 +1,4 @@
-package com.valemont.exchange.model;
+package com.valemont.exchange.stocks.model;
 
 import jakarta.persistence.*;
 import lombok.*;

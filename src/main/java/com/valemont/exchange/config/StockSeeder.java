@@ -1,7 +1,7 @@
 package com.valemont.exchange.config;
 
-import com.valemont.exchange.model.Stock;
-import com.valemont.exchange.repository.StockRepository;
+import com.valemont.exchange.stocks.model.Stock;
+import com.valemont.exchange.stocks.repository.StockRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

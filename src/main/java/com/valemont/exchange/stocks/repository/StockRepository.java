@@ -1,6 +1,6 @@
-package com.valemont.exchange.repository;
+package com.valemont.exchange.stocks.repository;
 
-import com.valemont.exchange.model.Stock;
+import com.valemont.exchange.stocks.model.Stock;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
