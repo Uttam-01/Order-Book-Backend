@@ -4,13 +4,14 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import com.valemont.exchange.security.JwtUtils;
+import com.valemont.exchange.config.JwtUtils;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -31,8 +32,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.substring(7);
-
-            // Just extract username from token, no DB lookup
             String username = jwtUtils.extractUsername(token);
 
             if (username != null && jwtUtils.isTokenValid(token, username)) {
@@ -43,5 +42,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         filterChain.doFilter(request, response);
+    }
+    @Override
+    protected boolean shouldNotFilter(@NonNull HttpServletRequest request) {
+        String path = request.getRequestURI();
+        boolean shouldSkip = path.equals("/api/v1/auth/login") ||
+                path.equals("/api/v1/auth/register") ||
+                path.equals("/api/v1/auth/refresh");
+        System.out.println("[JwtAuthFilter] Should Skip Filter for Path: " + path + " → " + shouldSkip);
+        return shouldSkip;
     }
 }
