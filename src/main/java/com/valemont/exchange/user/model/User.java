@@ -1,22 +1,21 @@
 package com.valemont.exchange.user.model;
 
+import com.valemont.exchange.common.model.BaseModel;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
 
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "users")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User extends BaseModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id", updatable = false, nullable = false)
-    private UUID id;
+    private String name;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -24,5 +23,4 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    // You can add more fields like name, phone, etc. later
 }
