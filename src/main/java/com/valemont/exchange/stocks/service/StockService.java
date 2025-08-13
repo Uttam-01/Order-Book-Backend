@@ -6,13 +6,11 @@ import java.util.List;
 import java.util.UUID;
 
 public interface StockService {
-    Stock createStock(Stock stock);
+    void createStock(Stock stock);
 
     List<Stock> getAllStocks();
 
     Stock getStockById(UUID id);
-
-    Stock getStockBySymbol(String symbol);
 
     Stock updateStock(UUID id, Stock updatedStock);
 

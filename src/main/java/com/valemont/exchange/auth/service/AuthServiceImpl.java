@@ -3,6 +3,8 @@ package com.valemont.exchange.auth.service;
 import com.valemont.exchange.auth.dto.AuthRequest;
 import com.valemont.exchange.auth.dto.AuthResponse;
 import com.valemont.exchange.auth.model.CustomUserDetails;
+import com.valemont.exchange.common.exception.CustomAuthenticationException;
+import com.valemont.exchange.common.exception.UserAlreadyExistsException;
 import com.valemont.exchange.config.JwtUtils;
 import com.valemont.exchange.user.model.User;
 import com.valemont.exchange.user.repository.UserRepository;
@@ -26,7 +28,7 @@ public class AuthServiceImpl implements AuthService{
    @Override
     public AuthResponse register(AuthRequest request) {
        if (userRepository.existsByEmail(request.getEmail())) {
-           throw new IllegalStateException("Email is already registered");
+           throw new UserAlreadyExistsException("Email is already registered");
        }
        User user1  = User.builder()
                .email(request.getEmail())
@@ -42,7 +44,7 @@ public class AuthServiceImpl implements AuthService{
                    )
            );
        }catch (Exception e){
-           throw new IllegalStateException("Invalid email and password");
+           throw new CustomAuthenticationException("Invalid email and password");
        }
        CustomUserDetails customUserDetails = (CustomUserDetails) authentication.getPrincipal();
        User user = customUserDetails.getUser();
@@ -62,7 +64,7 @@ public class AuthServiceImpl implements AuthService{
                     )
             );
         }catch (Exception e){
-            throw new IllegalStateException("Invalid email and password");
+            throw new CustomAuthenticationException("Invalid email and password");
         }
         CustomUserDetails customUserDetails = (CustomUserDetails) authentication.getPrincipal();
         User user = customUserDetails.getUser();

@@ -1,4 +1,4 @@
-package com.valemont.exchange.config;
+package com.valemont.exchange;
 
 import com.valemont.exchange.stocks.model.Stock;
 import com.valemont.exchange.stocks.repository.StockRepository;
